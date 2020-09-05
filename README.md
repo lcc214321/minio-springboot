@@ -11,10 +11,10 @@ chmod +x minio
 export MINIO_ACCESS_KEY=minio
 
 # 设置密码
-export MINIO_SECRET_KEY=miniopassword
+export MINIO_SECRET_KEY=xxx
 
-# 启动  /home/data是自己定义的文件目录，进入minio的下载目录
-./minio server /home/data
+# 启动  /home/minio/data是自己定义的文件目录，进入minio的下载目录
+./minio server /home/minio/data
 
 # 静默启动 
 nohup ./minio server --address 0.0.0.0:10900 /home/minio/data > /home/minio/log/minio.log 2>&1 &

@@ -20,7 +20,7 @@ export MINIO_SECRET_KEY=xxx
 nohup ./minio server --address 0.0.0.0:10900 /home/minio/data > /home/minio/log/minio.log 2>&1 &
 
 访问 http://yangxinn.top:10900/minio/login接口看到页面
-
+```
 # SpringBoot 集成MinIO
 
 

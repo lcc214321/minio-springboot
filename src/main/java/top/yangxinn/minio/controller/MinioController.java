@@ -4,10 +4,6 @@ import top.yangxinn.minio.common.result.Result;
 import top.yangxinn.minio.common.result.ResultUtil;
 import top.yangxinn.minio.config.MinioConfig;
 import top.yangxinn.minio.service.MinioService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
 import net.coobird.thumbnailator.Thumbnails;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +24,6 @@ import java.util.UUID;
 
 @RequestMapping("/minio")
 @RestController
-@Api(tags = "文件上传接口")
 public class MinioController {
 
     @Autowired
@@ -40,12 +35,7 @@ public class MinioController {
     @Value("${yang.tmp.file}")
     private String tmpPath;
 
-    @ApiOperation(value = "使用minio文件上传")
     @PostMapping("/uploadFile")
-    @ApiImplicitParams({
-            @ApiImplicitParam(dataType = "MultipartFile", name = "file", value = "上传的文件", required = true),
-            @ApiImplicitParam(dataType = "String", name = "bucketName", value = "对象存储桶名称", required = false)
-    })
     public Result uploadFile(MultipartFile file, String bucketName) {
         try {
             bucketName = StringUtils.isNotBlank(bucketName) ? bucketName : minioConfig.getBucketName();

@@ -1,0 +1,12 @@
+minio:
+  endpoint: http://yangxinn.top
+  port: 10900
+  accessKey: minio
+  secretKey: minioyang
+  secure: false
+  bucketName: "7chat"
+  configDir: "/home/minio/data/"
+
+yang:
+  tmp:
+    file: "/home/minio/tmp/"
